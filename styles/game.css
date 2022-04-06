@@ -1,0 +1,47 @@
+* { /* formatting for website */
+    box-sizing: border-box;
+}
+
+body { /* website background color */
+    background-color: rgb(21, 82, 173);
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+@font-face { /* font used on website */
+    font-family: EightBit;
+    src: url(/Fonts/EightBitDragon-anqx.ttf);
+}
+
+/*div.titlebox {
+    border: 1px solid red;
+    margin-bottom: 25px;
+    height: 80px;
+    text-align: center;
+}*/
+
+.rpg-container { /* Canvas position and format on website */
+    position: relative;
+    width: 320px;
+    height: 180px;
+    margin: 0 auto;
+    outline: 1px solid rgb(10, 47, 148);
+    -moz-box-shadow: 1px 1px 16px #000000;
+    -webkit-box-shadow: 1px 1px 16px #000000;
+    box-shadow: 1px 1px 16px #000000;
+    transform: scale(3.5) translateY(42.5%);
+}
+
+.rpg-container canvas{ /* How canvas is rendered in container */
+    image-rendering: pixelated;
+}
+
+.main-canvas { /* Formatting for canvas */
+    image-rendering: optimizeSpeed;
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -o-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+}

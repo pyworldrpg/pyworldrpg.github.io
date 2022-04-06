@@ -1,0 +1,138 @@
+:root { /* Varibles used */
+    --pixels: -384px;
+    --seconds: 2s;
+    --steps: 12;
+    --width: 32px;
+    --background-img: url(/Images/Maps/RoomOfPy.png);
+    --scale: scale(2.5);
+}
+
+.Fight {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 320px;
+    height: 180px;
+    background-image: var(--background-img);
+    background-repeat: no-repeat;
+    overflow: hidden;
+    background-size: cover;
+    image-rendering: pixelated;
+}
+
+@keyframes backgroundAnim { /* Animation for background, changes frames */
+    from { background-position: 0px; }
+    to { background-position: -1280px; }
+  }
+
+.Fight { /* Animation details, how long each frame should last and how it should cycle */
+    animation-name: backgroundAnim; 
+    animation-duration: 0.75s;
+    animation-timing-function: steps(4);
+    animation-iteration-count: infinite;
+}
+
+.fight-mc, .fight-enemy { /* Format for characters in fight */
+    position: absolute;
+    height: 32px;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.fight-mc{ /* Format main character in fight scene */
+    width: 32px;
+    bottom: 80px;
+    transform: scale(1.5);
+    left: 85px;
+}
+
+.fight-mc img { /* Adjust position of main character in fight scene */
+    transform: translateY(-32px);
+}
+
+.fight-enemy{ /* Format enemy in fight scene */
+    width: var(--width);
+    top: 65px;
+    right: 105px;
+    transform: var(--scale);
+}
+
+@keyframes sprite { /* Idle animation for enemy */
+    from { background-position: 0px; }
+    to { background-position: var(--pixels); }
+  }
+
+.fight-enemy{ /* Idle animation for enemy */
+    animation-name: sprite; 
+    animation-duration: var(--seconds);
+    animation-timing-function: steps(var(--steps));
+    animation-iteration-count: infinite;
+}
+
+@keyframes damage-animation { /* Hides damage animation */
+    to {
+      visibility: hidden;
+    }
+}
+@keyframes health-gain-anim { /* Health gain animation, adjusts character/enemy color to green effect */
+    0% {filter: none;}
+    50% {filter: invert(58%) sepia(97%) saturate(315%) hue-rotate(64deg) brightness(99%) contrast(99%);}
+    100% {filter: none;}
+}
+
+@keyframes health-steal-anim { /* Steal health animation, adjusts color kaleidescope effect*/
+    0% {filter: none;}
+    50% {filter: invert(20%) sepia(93%) saturate(2421%) hue-rotate(353deg) brightness(95%) contrast(94%);}
+    100% {filter: none;}
+}
+
+@keyframes xpBoost { /* XP boost animation, adjusts color blue effect */
+    0% {filter: none;}
+    50% {filter: invert(100%) sepia(29%) saturate(1028%) hue-rotate(138deg) brightness(100%) contrast(100%);}
+    100% {filter: none;}
+}
+
+@keyframes idle-animation { /* background animation */
+    from { background-position: 0px; }
+    to { background-position: -1280px; }
+}
+
+@keyframes deathAnim { /* death animation, adjusts position */
+    100% { 
+        transform: translateZ(-40%);
+        opacity: 0;
+    }  
+}
+
+.fight { /* specifications for background animation steps = #of frames */
+    animation-name: idle-animation; 
+    animation-duration: 1.5s;
+    animation-timing-function: steps(4);
+    animation-iteration-count: infinite;
+}
+
+.reg-damage-taken { /* specifications for taking damage animation */
+    animation:damage-animation 0.15s steps(4, start) infinite;
+}
+
+.reg-health-gain { /* specifications for health gain animation */
+    animation:health-gain-anim 1.5s steps(12, start) infinite;
+}
+
+.reg-health-steal { /* specifications for health steal animation */
+    animation:health-steal-anim 1.5s steps(12, start) infinite;
+}
+
+.death-anim { /* specifications for death animation animation */
+    animation:deathAnim 1.5s steps(16, start) 1 forwards;
+}
+
+.reg-xp-boost { /* specifications for xp-boost animation */
+    animation:xpBoost 1.5s steps(12, start) infinite;
+}
+
+
+
+

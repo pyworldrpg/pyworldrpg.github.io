@@ -1,0 +1,26 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "c:/Users/Mayank/Desktop/Mayank UBC/Year 2/Term 2/CPEN 291/Project 2/Hardware/joystick/JoyStick/JoyStickMapped",
+      "environment": [],
+      "program": "c:/Users/Mayank/Desktop/Mayank UBC/Year 2/Term 2/CPEN 291/Project 2/Hardware/joystick/JoyStick/JoyStickMapped/build/Debug/outDebug",
+      "internalConsoleOptions": "openOnSessionStart",
+      "MIMode": "gdb",
+      "miDebuggerPath": "C:/MinGW/bin/gdb.exe",
+      "externalConsole": false,
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ]
+}

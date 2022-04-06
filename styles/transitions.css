@@ -1,0 +1,25 @@
+/* Transition to fade to black and fade back */
+.Transition {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgb(8, 8, 8);
+    opacity: 0;
+    animation: transition-fade-in 1.5s forwards;
+}
+
+.Transition.fade-out {
+    animation: transition-fade-out 1.5s forwards;
+}
+
+@keyframes transition-fade-in {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes transition-fade-out {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
