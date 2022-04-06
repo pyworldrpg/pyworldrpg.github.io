@@ -1,0 +1,41 @@
+.TitleScreen { /* Title screen position and color */
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgb(10, 47, 148);
+  }
+  
+  .TitleScreen_logo { /* Color position, formatting of title screen logo */
+    display: block;
+    margin: 0 auto;
+    width: 128px;
+    image-rendering: pixelated;
+  }
+  
+  .TitleScreen .KeyboardMenu { /* Color and position of keyboard menu */
+    position: relative;
+    width: 100px;
+    margin: 0 auto;
+    background: transparent;
+    border: 0;
+  }
+  .TitleScreen button { /* Button start game position and color */
+    color: #fff;
+    justify-content: center;
+    padding:0;
+    margin: 0 auto;
+  }
+  
+  .TitleScreen .Menu {
+    position: relative;
+  }
+  
+  .TitleScreen .MenuDescription { /* Color and position of menu description */
+    background: transparent;
+    color: #fff;
+    border: 0;
+    text-align: center;
+  }
+  
