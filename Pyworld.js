@@ -46,12 +46,12 @@ class pyworld {
 
     //Checks if the player is attempting to interact with an npc or object
     playerActionCheck() {
-        connection4.onmessage = e => {
-            // console.log("hgfkjg")
-            if(e.data === 'Enter'){
-                this.map.interact();
-            }
-        }
+        // connection4.onmessage = e => {
+        //     // console.log("hgfkjg")
+        //     if(e.data === 'Enter'){
+        //         this.map.interact();
+        //     }
+        // }
         new KeyEventListener("Enter", () => {
             this.map.interact();
         })

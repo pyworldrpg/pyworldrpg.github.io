@@ -22,43 +22,43 @@ class MoveInput {
     init(){
         var keyP
         // calls the websocket connection and reads the data sent through the arduino
-        connection.onmessage = e => {
-            if(e.data === 'left'){
-                // console.log("A")
-                keyP = "left"
-                this.currDirections.unshift(keyP)
-            } 
-            else if(e.data === 'right'){
-                // console.log("D")
-                keyP = "right"
-                this.currDirections.unshift(keyP)
-            } 
-            else if(e.data === 'up'){
-                // console.log("W")
-                keyP = "up"
-                this.currDirections.unshift(keyP)
-            } 
-            else if(e.data === 'down'){
-                // console.log("S")
-                keyP = "down"
-                this.currDirections.unshift(keyP)
-            } 
-            else if(e.data === 'still'){
-                // console.log("still")
-                // keyP = "still"
-                this.currDirections = []
-                console.log(this.currDirections)
-            }
-            else if(e.data === 'Enter'){
-                keyP = "press"
-                console.log(keyP)
-                this.currDirections.unshift(keyP)
-            }
-            else if(e.data === 'release'){
-                // console.log("S")
-                keyP = "release"
-            }
-        }
+        // connection.onmessage = e => {
+        //     if(e.data === 'left'){
+        //         // console.log("A")
+        //         keyP = "left"
+        //         this.currDirections.unshift(keyP)
+        //     } 
+        //     else if(e.data === 'right'){
+        //         // console.log("D")
+        //         keyP = "right"
+        //         this.currDirections.unshift(keyP)
+        //     } 
+        //     else if(e.data === 'up'){
+        //         // console.log("W")
+        //         keyP = "up"
+        //         this.currDirections.unshift(keyP)
+        //     } 
+        //     else if(e.data === 'down'){
+        //         // console.log("S")
+        //         keyP = "down"
+        //         this.currDirections.unshift(keyP)
+        //     } 
+        //     else if(e.data === 'still'){
+        //         // console.log("still")
+        //         // keyP = "still"
+        //         this.currDirections = []
+        //         console.log(this.currDirections)
+        //     }
+        //     else if(e.data === 'Enter'){
+        //         keyP = "press"
+        //         console.log(keyP)
+        //         this.currDirections.unshift(keyP)
+        //     }
+        //     else if(e.data === 'release'){
+        //         // console.log("S")
+        //         keyP = "release"
+        //     }
+        // }
         
         // Adds a keyEvenListener to listen to keyboard presses
         document.addEventListener("keydown", key => {

@@ -35,11 +35,11 @@ class Dialogue {
             text_element: this.dialogue_element.querySelector(".dialogue_text"),
         });
         let count = 0;
-        connection2.onmessage = e => {
-            if(e.data === 'Enter'){
-                this.displayDone();
-            }
-        }
+        // connection2.onmessage = e => {
+        //     if(e.data === 'Enter'){
+        //         this.displayDone();
+        //     }
+        // }
 
         this.eventListener = new KeyEventListener("Enter", () => {
             this.displayDone();

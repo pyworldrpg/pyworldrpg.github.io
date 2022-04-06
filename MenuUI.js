@@ -73,39 +73,39 @@ class MenuUI {
         var keyP
         //this count is used to only check the joystick data every six iterations of the onmessage listener function
         //as the joystick data is received incredibly fast, thus preventing the options on the MenuUI from toggling too fast
-        var count = 0
-        connection3.onmessage = e => {
-            if(count % 6 === 0){
-                if(e.data === 'up'){
-                    keyP = "up"
-                    //This code checks what the current and previous buttons are and then toggles
-                    //to the right button if the joystick is moved up
-                    const currOption = Number(this.focusedOption.getAttribute("data-button"));
-                    const prevOption = Array.from(this.menu_element.querySelectorAll("button[data-button]")).reverse().find(b => {
-                        return b.dataset.button < currOption;
-                    });
-                    prevOption?.focus();
-                } 
-                else if(e.data === 'down'){
-                    //This code checks what the current and next buttons are and then toggles
-                    //to the right button if the joystick is moved up
-                    keyP = "down"
-                    const currOption = Number(this.focusedOption.getAttribute("data-button"));
-                    const nextOption = Array.from(this.menu_element.querySelectorAll("button[data-button]")).find(b => {
-                        return b.dataset.button > currOption;
-                    });
-                    nextOption?.focus();
-                }
-                count = 0;
-            }
-            count++;
-            //Checks if the button is clicked and selects that menu option
-            if(e.data === 'Enter'){
-                const selected = this.menuOptions[ Number(this.focusedOption.dataset.button) ];
-                selected.performAction();
-            }
+        // var count = 0
+        // connection3.onmessage = e => {
+        //     if(count % 6 === 0){
+        //         if(e.data === 'up'){
+        //             keyP = "up"
+        //             //This code checks what the current and previous buttons are and then toggles
+        //             //to the right button if the joystick is moved up
+        //             const currOption = Number(this.focusedOption.getAttribute("data-button"));
+        //             const prevOption = Array.from(this.menu_element.querySelectorAll("button[data-button]")).reverse().find(b => {
+        //                 return b.dataset.button < currOption;
+        //             });
+        //             prevOption?.focus();
+        //         } 
+        //         else if(e.data === 'down'){
+        //             //This code checks what the current and next buttons are and then toggles
+        //             //to the right button if the joystick is moved up
+        //             keyP = "down"
+        //             const currOption = Number(this.focusedOption.getAttribute("data-button"));
+        //             const nextOption = Array.from(this.menu_element.querySelectorAll("button[data-button]")).find(b => {
+        //                 return b.dataset.button > currOption;
+        //             });
+        //             nextOption?.focus();
+        //         }
+        //         count = 0;
+        //     }
+        //     count++;
+        //     //Checks if the button is clicked and selects that menu option
+        //     if(e.data === 'Enter'){
+        //         const selected = this.menuOptions[ Number(this.focusedOption.dataset.button) ];
+        //         selected.performAction();
+        //     }
 
-        }
+        // }
 
         //Key event listener for key W which checks for key w being clicked and then toggles the option up on the
         //menu UI
